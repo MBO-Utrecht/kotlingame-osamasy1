@@ -4,7 +4,7 @@ fun main(args: Array<String>) {
 
     osama.show()
 
-    val baksteen = Weapon( "Baksteen" , 20)
+    val baksteen = Weapon( "Baksteen" , 15)
 
     println(osama.weapon.name)
 

@@ -4,5 +4,8 @@ enum class LootType {
 
 class Loot(val name: String, val Loottype: LootType, val value: Double){
 
+    override fun toString(): String {
+        return "$name is $Loottype and is worth $value."
+    }
 
 }
