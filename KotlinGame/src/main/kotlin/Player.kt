@@ -1,11 +1,31 @@
-class Player(val name: String, var life: Int = 3, var level: Int = 1, var score: Int = 0) {
+class Player(var name: String, var lives: Int = 3, var level: Int = 1, var score: Int = 0) {
 
+    var weapon = Weapon("Fists", 10)
+    val inventory = ArrayList<Loot>()
     fun show() {
-        println("""
+        if (lives < 0 ){
+            println("$name is dead")
+        } else {
+            println("$name is alive")
+        }
+
+    }
+
+    override fun toString(): String {
+        return """
             name:  $name
-            life:  $life
+            lives: $lives
             level: $level
             score: $score
-            """)
+            weapon: ${weapon.name}
+            damage: ${weapon.damageInflicted}
+            """
+
+    }
+
+    fun showInventory() {
+        println("$name's Inventory:")
+        println(inventory.get(0))
+
     }
 }
